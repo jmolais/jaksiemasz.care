@@ -10,11 +10,8 @@ repositories {
 }
 
 dependencies {
-    compile 'com.google.guava:guava:23.5-jre'
-}
-
-dependencies {
     testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'com.google.guava:guava:23.5-jre'
 }
 
 jar {
