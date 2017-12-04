@@ -1,30 +1,34 @@
 package task;
 
+import com.google.gson.Gson;
+
 public class Person {
     private String name;
     private String surname;
     private String email;
 
+    //TODO: Validate arguments
     Person(String name, String surname, String email) {
-        this.name = name;
+        this.name =  name;
         this.surname = surname;
         this.email = email;
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
-    private String getSurname() {
+    public String getSurname() {
         return surname;
     }
 
-    private String getEmail() {
+    public String getEmail() {
         return email;
     }
 
     @Override
-    public String toString() {
-        return ">> toString(): Name: " + getName() + ", Surname: " + getSurname() + ", Email: " + getEmail() + ". <<";
+    public String toString(){
+        Gson gson = new Gson();
+        return gson.toJson(this);
     }
 }
