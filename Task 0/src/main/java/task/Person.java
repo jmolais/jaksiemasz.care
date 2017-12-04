@@ -7,11 +7,10 @@ public class Person {
     private String surname;
     private String email;
 
-    //TODO: Validate arguments
     Person(String name, String surname, String email) {
-        this.name =  name;
-        this.surname = surname;
-        this.email = email;
+        this.name = PersonValidateData.validateName.validate(name);
+        this.surname = PersonValidateData.validateName.validate(surname); //PersonValidateData.validate.validateName(surname);
+        this.email = PersonValidateData.validateEmail.validate(email);
     }
 
     public String getName() {

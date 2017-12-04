@@ -2,7 +2,7 @@ package task;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Examples of few created Person objects (includes illegal input data), data serialization done with JSON:");
+        System.out.println("Examples of few created Person objects (some with legal input data, some not), data serialization done with JSON:");
         Person theTestDude = new Person("Good", "Boye", "good.boye@notyourbusiness.com");
         System.out.println(theTestDude.toString());
 
@@ -29,3 +29,4 @@ public class Main {
 
 
 }
+
