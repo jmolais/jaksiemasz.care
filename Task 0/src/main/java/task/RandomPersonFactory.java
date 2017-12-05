@@ -43,11 +43,9 @@ public class RandomPersonFactory {
     }
 
     public static Person randomPerson() throws IOException {
-        Person person = new Person(
-                randomFirstName(),
-                randomSurname(),
-                randomFirstName() + "." + randomSurname() + "@" + randomEmailDomain()
-        );
+        String name = randomFirstName();
+        String surname = randomSurname();
+        Person person = new Person(name, surname, PersonEmailGenerator.generateEmail(name, surname));
         return person;
     }
 }
