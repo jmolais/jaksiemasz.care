@@ -52,7 +52,7 @@ public class PersonValidateData {
     }
 
     public static boolean isAValidName(String s) {
-        return s.matches("(\\p{L}+[,.]?[ ]?|\\p{L}+['-]?)+$");
+        return s.matches("(\\p{L}+[,.]?[ ]?|\\p{L}+['-]?)+[^ ]$");
     }
 
     public static boolean isAValidEmail(String s) {

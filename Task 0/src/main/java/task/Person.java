@@ -25,6 +25,10 @@ public class Person {
         return email;
     }
 
+    public void printNicely(String spacer) {
+        System.out.println(name + " " + surname + spacer + email);
+    }
+
     @Override
     public String toString(){
         Gson gson = new Gson();
