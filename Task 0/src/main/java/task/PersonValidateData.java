@@ -18,8 +18,6 @@ Rules for allowed Email input; addreses, they:
 
 package task;
 
-import java.io.IOException;
-
 public class PersonValidateData {
     public static class validateName {
         public static String validate(String inputName) {
@@ -54,7 +52,7 @@ public class PersonValidateData {
     }
 
     public static boolean isAValidName(String s) {
-        return s.matches("(\\p{L}+[,.]?[ ]?|\\p{L}+['-]?)+$"); //(".*(\\p{L}).*") Possible isAWord() check
+        return s.matches("(\\p{L}+[,.]?[ ]?|\\p{L}+['-]?)+$");
     }
 
     public static boolean isAValidEmail(String s) {

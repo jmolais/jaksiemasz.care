@@ -3,13 +3,13 @@ package task;
 import com.google.gson.Gson;
 
 public class Person {
-    private String name;
-    private String surname;
-    private String email;
+    private final String name;
+    private final String surname;
+    private final String email;
 
     Person(String name, String surname, String email) {
         this.name = PersonValidateData.validateName.validate(name);
-        this.surname = PersonValidateData.validateName.validate(surname); //PersonValidateData.validate.validateName(surname);
+        this.surname = PersonValidateData.validateName.validate(surname);
         this.email = PersonValidateData.validateEmail.validate(email);
     }
 
