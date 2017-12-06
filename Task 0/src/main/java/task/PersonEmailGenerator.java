@@ -8,7 +8,7 @@ public class PersonEmailGenerator {
         String randomEmailAddress;
         Random r = new Random();
         char[] specialSymbols = {'-', '_', '.'};
-        int randomNumber = r.nextInt(8);
+        int randomNumber = r.nextInt(9);
         int specialSymbolRandomizer = r.nextInt(specialSymbols.length - 1);
 
         name = nameAndSurnameFix(name, specialSymbols[specialSymbolRandomizer]);

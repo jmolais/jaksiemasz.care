@@ -2,7 +2,7 @@ package task;
 
 import com.google.gson.Gson;
 
-public class Person {
+public class Person implements Comparable<Person>{
     private final String name;
     private final String surname;
     private final String email;
@@ -25,13 +25,32 @@ public class Person {
         return email;
     }
 
+    public void printNicely() {
+        System.out.printf("%-14s %2s %-20s %2s %-34s \n", this.getName(), "|", this.getSurname(), "|", this.getEmail());
+    }
+
     public void printNicely(String spacer) {
-        System.out.println(name + " " + surname + spacer + email);
+        System.out.printf("%-14s %2s %-20s %2s %-34s \n", this.getName(), spacer, this.getSurname(), spacer, this.getEmail());
     }
 
     @Override
     public String toString(){
         Gson gson = new Gson();
         return gson.toJson(this);
+    }
+
+    @Override
+    public int compareTo(Person o) {
+        int nameCompared = name.compareTo(o.name);
+        int surnameCompared = surname.compareTo(o.surname);
+        if (nameCompared == 0) {
+            return surname.compareTo(o.surname);
+        }
+        else if (surnameCompared == 0) {
+            return email.compareTo(o.email);
+        }
+        else {
+            return nameCompared;
+        }
     }
 }
