@@ -5,10 +5,27 @@ apply plugin: 'java'
 
 sourceCompatibility = 1.8
 
+task fatJar(type: Jar) {
+    manifest {
+        attributes 'Implementation-Title': 'Gradle fatJAR test',
+                'Implementation-Version': version,
+                'Main-Class': 'Main'
+    }
+    baseName = project.name + '-all'
+    from { configurations.compile.collect { it.isDirectory() ? it : zipTree(it) } }
+    with jar
+}
+
 repositories {
     mavenCentral()
 }
 
 dependencies {
+    compile group: 'com.google.guava', name: 'guava', version: '23.0'
+    compile 'com.google.code.gson:gson:2.8.2'
     testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+
+jar {
+    manifest.attributes "Main-Class": "Main"
 }
