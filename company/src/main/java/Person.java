@@ -1,16 +1,26 @@
-package task;
-
 import com.google.gson.Gson;
 
-public class Person implements Comparable<Person>{
+public class Person  implements Comparable<Person> {
     private final String name;
     private final String surname;
     private final String email;
+    private final Sex sex;
+    private final Country countryOfOrigin;
 
-    Person(String name, String surname, String email) {
-        this.name = PersonValidateData.validateName.validate(name);
-        this.surname = PersonValidateData.validateName.validate(surname);
-        this.email = PersonValidateData.validateEmail.validate(email);
+    Person() {
+        this.name = "John";
+        this.surname = "Doe";
+        this.email = "nonexistent@anonymous.com";
+        this.countryOfOrigin = new Country("NowhereLand");
+        this.sex = Sex.MALE;
+    }
+
+    Person(String name, String surname, String email, Country country, Sex sex) {
+        this.name = PersonValidateData.validateName(name);
+        this.surname = PersonValidateData.validateName(surname);
+        this.email = PersonValidateData.validateEmail(email);
+        this.countryOfOrigin = country;
+        this.sex = sex;
     }
 
     public String getName() {
@@ -23,14 +33,6 @@ public class Person implements Comparable<Person>{
 
     public String getEmail() {
         return email;
-    }
-
-    public void printNicely() {
-        System.out.printf("%-14s %2s %-20s %2s %-34s \n", this.getName(), "|", this.getSurname(), "|", this.getEmail());
-    }
-
-    public void printNicely(String spacer) {
-        System.out.printf("%-14s %2s %-20s %2s %-34s \n", this.getName(), spacer, this.getSurname(), spacer, this.getEmail());
     }
 
     @Override
