@@ -6,4 +6,28 @@ public class Name {
         this.firstName = firstName;
         this.surname = surname;
     }
+
+    public static String validateName(String inputName) {
+        try {
+            if (isAValidName(inputName)) {
+                return inputName;
+            } else {
+                throw new IllegalArgumentException("Invalid input argument: (Name) input data contains illegal symbols.");
+            }
+        } catch (IllegalArgumentException e) {
+            return "N/A";
+        }
+    }
+
+    public static boolean isAValidName(String s) {
+        return s.matches("(\\p{L}+[,.]?[ ]?|\\p{L}+['-]?)+[^ ]$");
+    }
+
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public String getSurname() {
+        return surname;
+    }
 }

@@ -17,40 +17,5 @@ Rules for allowed Email input; addreses, they:
 */
 
 public class PersonValidateData {
-    public static String validateName(String inputName) {
-        try {
-            if(isAValidName(inputName)) {
-                return inputName;
-            }
-            else {
-                throw new IllegalArgumentException("Invalid input argument: (Name) input data contains illegal symbols.");
-            }
-        }
-        catch (IllegalArgumentException e) {
-            return "N/A";
-        }
-    }
-
-    public static String validateEmail(String inputEmail) {
-        try {
-            if(isAValidEmail(inputEmail)) {
-                return inputEmail;
-            }
-            else {
-                throw new IllegalArgumentException("Invalid input argument: (Email) input data contains illegal symbols.");
-            }
-        }
-        catch (IllegalArgumentException e) {
-            return "N/A";
-        }
-    }
-
-    public static boolean isAValidName(String s) {
-        return s.matches("(\\p{L}+[,.]?[ ]?|\\p{L}+['-]?)+[^ ]$");
-    }
-
-    public static boolean isAValidEmail(String s) {
-        return s.matches("(^[A-Za-z0-9]+[-._A-Za-z0-9]*@[A-Za-z0-9]+[-.A-Za-z0-9]*.[A-Za-z0-9]{2,})");
-    }
 
 }

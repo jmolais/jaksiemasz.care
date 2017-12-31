@@ -5,14 +5,14 @@ public class PersonFactory {
     public static Person randomMale() throws IOException {
         String name = PersonFactoryRandomMembers.randomMaleFirstName();
         String surname = PersonFactoryRandomMembers.randomSurname();
-        Person person = new Person(name, surname, EmailFactory.generateEmail(name, surname), Country.randomCountry(), Sex.MALE);
+        Person person = new Person(name, surname, Email.generateEmail(name, surname), Country.randomCountry(), Sex.MALE);
         return person;
     }
 
     public static Person randomFemale() throws IOException {
         String name = PersonFactoryRandomMembers.randomFemaleFirstName();
         String surname = PersonFactoryRandomMembers.randomSurname();
-        Person person = new Person(name, surname, EmailFactory.generateEmail(name, surname), Country.randomCountry(), Sex.FEMALE);
+        Person person = new Person(name, surname, Email.generateEmail(name, surname), Country.randomCountry(), Sex.FEMALE);
         return person;
     }
 
