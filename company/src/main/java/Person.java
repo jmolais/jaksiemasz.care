@@ -1,16 +1,16 @@
 import com.google.gson.Gson;
 
 public class Person implements Comparable<Person> {
-    private final Name name;
+    final Name name;
     private final String email;
     private final Sex sex;
     private final Country countryOfOrigin;
 
     Person() {
-        this.name = new Name("John", "Doe");
-        this.email = "nonexistent@anonymous.com";
-        this.countryOfOrigin = new Country("NowhereLand");
-        this.sex = Sex.MALE;
+        this.name = new Name("N/A", "N/A");
+        this.email = "N/A";
+        this.countryOfOrigin = new Country("N/A");
+        this.sex = Sex.UNDISCLOSED;
     }
 
     Person(String name, String surname, String email, Country country, Sex sex) {
@@ -30,11 +30,8 @@ public class Person implements Comparable<Person> {
         this.sex = sex;
     }
 
-    public String getName() {
-        String returnedName = name.getFirstName();
-        StringBuilder sb = new StringBuilder(returnedName);
-        sb.append(name.getSurname());
-        return  sb.toString();
+    public Name getName() {
+        return name;
     }
 
     public String getFirstName() {

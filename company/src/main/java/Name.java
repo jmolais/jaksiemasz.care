@@ -30,4 +30,12 @@ public class Name {
     public String getSurname() {
         return surname;
     }
+
+    @Override
+    public String toString() {
+        String returnedName = firstName;
+        StringBuilder sb = new StringBuilder(returnedName);
+        sb.append(surname);
+        return  sb.toString();
+    }
 }
