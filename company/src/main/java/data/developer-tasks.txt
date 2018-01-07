@@ -1,0 +1,15 @@
+Writing the program code
+Writing the aplication core system
+Fixing a bug
+Fixing a bug in a new feature
+Developing a new feature
+Developing the main project
+Developing project
+Eating sandwiches very professionally
+Database management
+Code refactoring
+Writing code for the new project
+Reviewing current systems
+Presenting ideas for system improvements
+Fixing old code
+Making new changes work with old code base

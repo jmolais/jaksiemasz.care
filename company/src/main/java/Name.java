@@ -35,7 +35,8 @@ public class Name {
     public String toString() {
         String returnedName = firstName;
         StringBuilder sb = new StringBuilder(returnedName);
+        sb.append(" ");
         sb.append(surname);
-        return  sb.toString();
+        return sb.toString();
     }
 }

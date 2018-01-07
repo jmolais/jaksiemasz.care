@@ -1,10 +1,10 @@
 import com.google.gson.Gson;
 
 public class Person implements Comparable<Person> {
-    final Name name;
-    private final String email;
-    private final Sex sex;
-    private final Country countryOfOrigin;
+    Name name;
+    private String email;
+    private Sex sex;
+    private Country countryOfOrigin;
 
     Person() {
         this.name = new Name("N/A", "N/A");
@@ -23,11 +23,27 @@ public class Person implements Comparable<Person> {
         this.sex = sex;
     }
 
-    Person (Name name, String email,  Country country, Sex sex) {
+    Person(Name name, String email, Country country, Sex sex) {
         this.name = name;
         this.email = Email.validateEmail(email);
         this.countryOfOrigin = country;
         this.sex = sex;
+    }
+
+    public void setName(Name name) {
+        this.name = name;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setSex(Sex sex) {
+        this.sex = sex;
+    }
+
+    public void setCountryOfOrigin(Country countryOfOrigin) {
+        this.countryOfOrigin = countryOfOrigin;
     }
 
     public Name getName() {
@@ -40,6 +56,14 @@ public class Person implements Comparable<Person> {
 
     public String getSurname() {
         return name.getSurname();
+    }
+
+    public Sex getSex() {
+        return sex;
+    }
+
+    public Country getCountryOfOrigin() {
+        return countryOfOrigin;
     }
 
     public String getEmail() {

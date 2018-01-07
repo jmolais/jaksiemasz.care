@@ -1,13 +1,19 @@
 import com.google.gson.Gson;
 
+import java.util.List;
+
 public interface Employee {
     Name getName();
 
     String getRole();
 
-    Report reportWork(Employee employee); //TODO: Delete comment, Zwraca ilość pracy wykonana przez pracownika
+    void setRole(String role);
 
-    void assign(Task task); //TODO: Delete Wypisuje przy tym co robi np. "Developer 'implementing new bug: x unistOfWork'. "
+    String reportWork(); //TODO: Delete comment, Zwraca ilość pracy wykonana przez pracownika
+
+    List<Task> getTaskList();
+
+    void assign(Task task);
 
     void setBoss(Employee employee);
 
@@ -15,5 +21,6 @@ public interface Employee {
 
     default String toJson() {
         return new Gson().toJson(this);
-    } //Just for debugging purposes.
+    } //Just for debugging purposes. In some cases it will throw exception, for example with
+    // TeamManagers who hired any employees because of the circular reference regarding TeamManager's hire() method.
 }

@@ -1,5 +1,5 @@
 public abstract class EmployeeAbstract extends Person implements Employee {
-    private final String role;
+    String role;
 
     public EmployeeAbstract(Name name, String email, Country country, Sex sex, String role) {
         super(name, email, country, sex);
@@ -9,6 +9,14 @@ public abstract class EmployeeAbstract extends Person implements Employee {
     public EmployeeAbstract(String role) {
         super();
         this.role = role;
+    }
+
+    void castPersonToEmployee(Person person, String role) {
+        this.setName(person.getName());
+        this.setEmail(person.getEmail());
+        this.setCountryOfOrigin(person.getCountryOfOrigin());
+        this.setSex(person.getSex());
+        this.setRole(role);
     }
 
     @Override

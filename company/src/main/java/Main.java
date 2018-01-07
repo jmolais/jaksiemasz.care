@@ -2,26 +2,13 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) throws IOException {
-        //For debugging purposes:
-        for (int i = 0; i < 5; i++) {
-            Person p = PersonFactory.randomPerson();
-            System.out.println(p);
-        }
-        Person p = new Person();
-        System.out.println(p);
 
-        Developer dev = new Developer(
-                new Name("John", "Godson"),
-                "sibidibipapa@gogo.com",
-                new Country("Proland"),
-                Sex.MALE,
-                "A thingy developer"
-        );
-        System.out.println(dev);
+        //Company.NLevelRandomCompany(2, 3); //Creates a randomly generated company assigned to a CEO TeamManager without assigning tasks;
 
-        Developer dev2 = new Developer("A thingy developer");
-        System.out.println(dev2);
+        TeamManager ceo = Company.NLevelRandomCompanyWithTasks(2, 2, 3); //Creates a randomly generated company assigned to a ceo TeamManager, then prints it nicely.
+
+        System.out.println("--------");
+
+        ceo.printManagerDeepWithReport(); //Other possibility: ceo.printManagerDeep(), allows  for printing without looking into assigned tasks.
     }
-
-
 }

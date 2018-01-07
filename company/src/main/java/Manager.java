@@ -7,5 +7,7 @@ public interface Manager extends Employee {
 
     boolean canHire();
 
+    boolean isCEO();
+
     List<Employee> getEmployees();
 }
